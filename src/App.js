@@ -2,23 +2,17 @@ import { useState } from 'react';
 
 
 import Sidebar from './componentes/sidebar/sidebar'
+import Navbar from './componentes/navbar/navbar';
+import {CiMenuBurger} from "react-icons/ci";
+
 
 import './App.css';
 
 const App = () => {
-
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const openSidebar = () => {
-    setSidebarOpen(true);
-  };
-  const closeSidebar = () => {
-    setSidebarOpen(false);
-  }
-
   return (
     <div className="container">
-      <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar}/>
-    </div>
+      <Sidebar/>
+    </div>  
   );
 }
 
