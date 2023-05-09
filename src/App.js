@@ -9,15 +9,21 @@ import Login from './componentes/login/login';
 
 
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import CreateAcc from './componentes/signUp/signUp.JS';
 
 const App = () => {
 
   return (
     <>
-    <div className="container">
-      <Login/>
+    <div className='container'>
+    <Routes>
+      <Route path='/' element={<Login/>}/>
+      <Route path='/Home' element={<Sidebar/>}/>
+      <Route path='/SignUp' element={<CreateAcc/>}/>
+    </Routes>
     </div>
-    </>  
+    </>
   );
 }
 

@@ -2,7 +2,7 @@ import '../sidebar/sidebar.css';
 import { useState } from 'react';
 import logo from '../../assets/logo.png'
 
-import { CiLogout, CiUser, CiMonitor, CiHome } from "react-icons/ci";
+import { CiLogout, CiUser, CiMonitor, CiHome, CiMenuBurger  } from "react-icons/ci";
 
 
 
@@ -16,48 +16,39 @@ const Sidebar = ({ closeSidebar }) => {
                 <h1>DASHBOARD</h1>
                 </div>
             </div>
-            <i 
-            onClick={() => closeSidebar}
-            className='fa fa-times'
-            id='sidebar'
-            area-hidden="true"
-            ></i>
             <div className='sidebar__Menu'>
                 <div className='sidebar__link'>
-                    <i className="fa fa-home"></i>
+                    <i className="Home"></i>
                     <a href='#'>
                         <CiHome 
                         size={20}
                         style={{
                         marginRight: 4,
                         marginBottom: -3,
-                        }}/>
-                        Home</a>
+                        }}/>Home</a>
                 </div>
                 <div className='sidebar__link'>
-                    <i className="fa fa-building" aria-hidden="true"></i>
+                    <i className="User" aria-hidden="true"></i>
                     <a href='#'>
                         <CiUser 
                         size={20}
                         style={{
                         marginRight: 4,
                         marginBottom: -3,
-                        }}/>
-                        Usuário</a>
+                        }}/>Usuário</a>
                 </div>
                 <div className='sidebar__link'>
-                    <i className='fa fa-male'></i>
+                    <i className="Register"></i>
                     <a href='#'>
                         <CiMonitor 
                         size={20}
                         style={{
                         marginRight: 4,
                         marginBottom: -3,
-                        }}/>
-                        Registradores</a>
+                        }}/>Registradores</a>
                 </div>
                 <div className='sidebar__Logout'>
-                    <i className='fa fa-power-off'></i>
+                    <i className='Logout'></i>
                     <a href='#'>
                         <CiLogout 
                         size={20}

@@ -1,4 +1,4 @@
-.Login {
+.signUp {
     background: #020509;
     grid-area: sd;
     padding: 20px;
@@ -50,17 +50,4 @@ input[type="password"] {
     margin: 10px 0px;
     cursor: pointer;
     width: 100%;
-}
-
-a {
-    font-family: 'Lato';
-    color: white;
-    font-size: 14px;
-    margin-top: 15px;
-    padding: 10px 89px;
-    cursor: pointer;
-}
-
-a:hover {
-    text-decoration: underline;
 }

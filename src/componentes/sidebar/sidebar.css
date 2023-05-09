@@ -93,6 +93,7 @@
     text-decoration: none;
     color: #a5aaad;
     font-weight: 700;
+    padding: 0px;
 }
 
 .sidebar__link a:focus {
@@ -110,10 +111,11 @@
 .sidebar__link>i {
     margin-right: 10px;
     font-size: 18px;
+
 }
 
 .sidebar__Logout {
-    margin-top: 600px;
+    margin-top: 550px;
     padding: 10px;
     color: #e65061;
 }
@@ -128,6 +130,7 @@
     color: #e65061;
     font-weight: 700;
     text-transform: uppercase;
+    padding: 0px;
 }
 
 .sidebar__Logout a:hover {
