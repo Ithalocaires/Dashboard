@@ -10,7 +10,8 @@ import Login from './componentes/login/login';
 
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import CreateAcc from './componentes/signUp/signUp.JS';
+import CreateAcc from './componentes/signUp/createAcc.JS';
+import Home from './componentes/main/home/home';
 
 const App = () => {
 
@@ -19,7 +20,7 @@ const App = () => {
     <div className='container'>
     <Routes>
       <Route path='/' element={<Login/>}/>
-      <Route path='/Home' element={<Sidebar/>}/>
+      <Route path='/Home' element={<Home/>}/>
       <Route path='/SignUp' element={<CreateAcc/>}/>
     </Routes>
     </div>

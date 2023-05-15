@@ -1,11 +1,8 @@
 import React from "react";
-
 import "./login.css";
 import {useNavigate } from "react-router-dom";
 
-
-
-export default function Login() {
+function Login() {
 
   const navigate = useNavigate();
 
@@ -32,19 +29,17 @@ export default function Login() {
       <form>
         <label className="label">
             E-mail:
-
             <input type="email" name="name" placeholder="E-mail" />
         </label>
         <label className="label">
           Senha:
-          
             <input type="password" name="senha" placeholder="Senha"/>
         </label>
           <input type="submit" value="Submit" className="button" onClick={Logar}/>
           <a onClick={CriarConta}> Criar Conta </a>
         </form>
     </div>
-
   );
-
 }
+
+export default Login;
