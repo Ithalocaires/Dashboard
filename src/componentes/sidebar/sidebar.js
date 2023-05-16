@@ -27,7 +27,7 @@ const Sidebar = ({ closeSidebar }) => {
             <div className='sidebar__Menu'>
                 <div className='sidebar__link'>
                     <i className="Home"></i>
-                    <a href='#'>
+                    <a href='/Home'>
                         <CiHome 
                         size={20}
                         style={{
