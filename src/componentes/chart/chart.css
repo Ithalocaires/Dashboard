@@ -1,5 +1,19 @@
-.chart {
-    margin-left: 600px;
+.doughnutChart {
+    margin-left: 300px;
+    width: 600px;
+    height: 200px;
+    align-items: center;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid;
+    width: 100%;
+}
+
+.lineChart {
+    margin-top: 10px;
+    margin-left: 300px;
     width: 600px;
     height: 200px;
 }
