@@ -1,6 +1,4 @@
 
-import { userData } from "../../chart/dados";
-import { useState } from 'react';
 import LineChart from "../../chart/chart";
 import { 
   Chart as ChartJS,
@@ -19,10 +17,6 @@ ChartJS.register(
 )
 
 function Home( {UserData }) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  // IF YOU SEE THIS COMMENT: I HAVE GOOD EYESIGHT
-
   return (
     <div>
       <Sidebar/>

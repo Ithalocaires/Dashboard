@@ -19,7 +19,7 @@ import {
     PointElement
  )
 
-const LineChart = ( {userData} ) => {
+const LineChart = () => {
 
     const DataSemana1 ={
         labels  : ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'],

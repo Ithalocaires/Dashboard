@@ -11,6 +11,8 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import CreateAcc from './componentes/signUp/createAcc.JS';
 import Home from './componentes/main/home/home';
+import User from './componentes/main/user/user'
+import Register from './componentes/main/register/register'
 
 const App = () => {
 
@@ -21,6 +23,8 @@ const App = () => {
       <Route path='/' element={<Login/>}/>
       <Route path='/Home' element={<Home/>}/>
       <Route path='/SignUp' element={<CreateAcc/>}/>
+      <Route path='/User' element={<User/>}/>
+      <Route path='/Register' element={<Register/>}/>
     </Routes>
     </div>
     </>

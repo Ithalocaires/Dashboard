@@ -37,7 +37,7 @@ const Sidebar = ({ closeSidebar }) => {
                 </div>
                 <div className='sidebar__link'>
                     <i className="User" aria-hidden="true"></i>
-                    <a href='#'>
+                    <a href='/User'>
                         <CiUser 
                         size={20}
                         style={{
@@ -47,7 +47,7 @@ const Sidebar = ({ closeSidebar }) => {
                 </div>
                 <div className='sidebar__link'>
                     <i className="Register"></i>
-                    <a href='#'>
+                    <a href='/Register'>
                         <CiMonitor 
                         size={20}
                         style={{
