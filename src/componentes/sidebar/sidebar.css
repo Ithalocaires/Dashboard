@@ -1,4 +1,5 @@
 #sidebar {
+    position: fixed;
     background: #020509;
     grid-area: sd;
     padding: 20px;
@@ -22,7 +23,7 @@
     position: absolute;
 }
 
-.sidebar__closed #site_logo {
+.sidebar__closed #menu {
     position: absolute;
     left: 250px !important;
 }
@@ -35,7 +36,7 @@
     margin-bottom: 30px;
 }
 
-.sidebar__img {
+.sidebar__icon {
     display: flex;
     align-items: center;
 }
@@ -137,4 +138,8 @@
     padding: 7px;
     background: #411318;
     border-radius: 3px;
+}
+
+.menuIcon {
+    margin-bottom: 5px;
 }

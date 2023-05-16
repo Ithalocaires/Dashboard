@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Sidebar from './componentes/sidebar/sidebar'
-import Navbar from './componentes/navbar/navbar';
 import {CiMenuBurger} from "react-icons/ci";
 import BarChart from './componentes/chart/chart';
 import { userData } from './componentes/chart/dados';

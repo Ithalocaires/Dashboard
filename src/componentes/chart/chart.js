@@ -1,5 +1,6 @@
 import React from "react";
 import {Line, Doughnut} from "react-chartjs-2"
+import Select from 'react-select'
 import { userData } from "./dados";
 import { 
     Chart as ChartJS,
@@ -126,37 +127,56 @@ const LineChart = ( {userData} ) => {
         },
       };
 
+      const SelectOpt = [
+        {value: 'Semanal', label:'Semanal'},
+        {value: 'Mensal', label:'Mensal'}
+
+      ]
+
     return (
     <>
       <div className="doughnutChart">
         <Doughnut
         data={DataDoughnut}
         options={OptDoughnut}
+        className="doughnut"
+        
         ></Doughnut>
         <hr/>
+        <Select className="Select" options={SelectOpt}></Select>
+
       </div>
       <div className="lineChart">
           <Line  
           data={DataSemana1}
           options={OptSensor1}
+          className="line"
           >
           </Line>
           <hr/>
+          <Select className="Select" options={SelectOpt}></Select>
+
       </div>
       <div className="lineChart">
           <Line  
           data={DataSemana2}
           options={OptSensor2}
+          className="line"
           >
           </Line>
           <hr/>
+          <Select className="Select" options={SelectOpt}></Select>
+
       </div>
       <div className="lineChart">
           <Line  
           data={DataSemana3}
           options={OptSensor3}
+          className="line"
           > 
           </Line>
+
+          <Select className="Select" options={SelectOpt}></Select>
       </div>
     </>
     )

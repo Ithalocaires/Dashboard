@@ -1,8 +1,19 @@
 .doughnutChart {
     margin-left: 300px;
-    width: 600px;
-    height: 200px;
+    width: calc(100vw - 400px);
+    height: 300px;
     align-items: center;
+}
+
+.doughnut {
+    position: relative;
+    right: -40%;
+}
+
+.line {
+    position: relative;
+    right: -5%;
+    width: 600px;
 }
 
 hr {
@@ -12,8 +23,19 @@ hr {
 }
 
 .lineChart {
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     margin-left: 300px;
-    width: 600px;
-    height: 200px;
+    width: calc(100vw - 400px);
+    height: 300px;
+    position: relative;
+}
+
+.Select {
+    width: 200px;
+    margin-left: 500px;
+    position: relative;
+    top: -90%;
+    right: -40%;
+    transform: translateY(-50%);
 }

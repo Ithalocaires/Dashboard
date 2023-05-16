@@ -1,19 +1,27 @@
 import '../sidebar/sidebar.css';
 import { useState } from 'react';
 import logo from '../../assets/logo.png'
+import {useNavigate } from "react-router-dom";
 
 import { CiLogout, CiUser, CiMonitor, CiHome, CiMenuBurger  } from "react-icons/ci";
 
 
 
 const Sidebar = ({ closeSidebar }) => {
-    const [sidebarOpen, setSidebarOpen] = useState(false);
+
+    const navigate = useNavigate();
+
+    function Criar() {
+        navigate("/Login");
+      }
+
+    const [sidebarOpen, setSidebarOpen] = useState(true);
     return(
         <div className={sidebarOpen ? "sidebar__open" : "sidebar__closed"} id="sidebar">
             <div className='sidebar__title'> 
-                <div className='sidebar__img'>
-                <img src={logo} alt='logo' id="site_logo" onClick={() => setSidebarOpen(!sidebarOpen)}/>
-                <h1>DASHBOARD</h1>
+                <div className='sidebar__icon'>
+                <CiMenuBurger size={25} className='menuIcon'/>
+                <h1>DASHBOARD</h1>  
                 </div>
             </div>
             <div className='sidebar__Menu'>
@@ -49,12 +57,13 @@ const Sidebar = ({ closeSidebar }) => {
                 </div>
                 <div className='sidebar__Logout'>
                     <i className='Logout'></i>
-                    <a href='#'>
+                    <a href='/'>
                         <CiLogout 
                         size={20}
                         style={{
                         marginRight: 4,
                         marginBottom: -3,
+                        onClick:{Criar}
                         }}/>Log out</a>
                 </div>
             </div>
