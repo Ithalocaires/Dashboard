@@ -1,5 +1,5 @@
 .doughnutChart {
-    margin-left: 300px;
+    margin-left: 325px;
     width: calc(100vw - 400px);
     height: 300px;
     align-items: center;
@@ -7,13 +7,13 @@
 
 .doughnut {
     position: relative;
-    right: -40%;
+    right: -35%;
 }
 
 .line {
     position: relative;
-    right: -5%;
-    width: 600px;
+    right: -14%;
+    width: 1000px;
     margin-bottom: 5px;
 }
 
@@ -28,7 +28,7 @@ hr {
     margin-bottom: 20px;
     margin-left: 300px;
     width: calc(100vw - 400px);
-    height: 300px;
+    height: 500px;
     position: relative;
 }
 
@@ -36,7 +36,33 @@ hr {
     width: 200px;
     margin-left: 500px;
     position: relative;
-    top: -90%;
+    top: -95%;
     right: -40%;
     transform: translateY(-50%);
+}
+
+@media only screen and (max-device-width: 1400px) {
+    .doughnutChart {
+        margin-left: 300px;
+        width: calc(100vw - 400px);
+        height: 200px;
+        align-items: center;
+    }
+
+    .Select {
+        width: 120px;
+        margin-left: 400px;
+        position: relative;
+        top: -95%;
+        right: -40%;
+    }
+
+    .lineChart {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 298px;
+        width: calc(100vw - 400px);
+        height: 300px;
+        position: relative;
+    }
 }

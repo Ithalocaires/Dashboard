@@ -2,9 +2,10 @@
     width: 700px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f8f8f8;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 680px;
 }
 
 .registerTitle {
@@ -20,4 +21,16 @@
 .registerInfo {
     margin-bottom: 10px;
     margin-right: 10px;
+}
+
+@media only screen and (max-device-width: 1400px) {
+    .register {
+        width: 700px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        background-color: white;
+        margin-left: 400px;
+    }
 }

@@ -24,38 +24,56 @@ const LineChart = () => {
     const DataSemana1 ={
         labels  : ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'],
         datasets: [{
-            labels: 'Água gasta na semana',
+            label: 'Sensor 1',
             data: [8, 12, 5, 9, 15],
-            backgroundColor: '#3ea175',
-            borderColor: 'black',
-            pointBorderColor: '#3ea175',
+            backgroundColor: '#36A2EB',
+            borderColor: '#36A2EB',
+            pointBorderColor: '#36A2EB',
             fill: false,
-        }]
-    }
+            },
+            {
+              label: 'Sensor 2',
+              data: [3, 14, 19, 8, 6],
+              backgroundColor: '#FF6283',
+              borderColor: '#FF6283',
+              pointBorderColor: '#FF6283',
+              fill: false,
+            },
+            {
+              label: 'Sensor 3',
+              data: [6, 15, 17, 10, 20],
+              backgroundColor: '#4ABFBF',
+              borderColor: '#4ABFBF',
+              pointBorderColor: '#4ABFBF',
+              fill: false,
+            }
+          ]
+        }
 
-    const DataSemana2 ={
-      labels  : ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'],
-      datasets: [{
-          labels: 'Água gasta na semana',
-          data: [3, 14, 19, 8, 6],
-          backgroundColor: '#3ea175',
-          borderColor: 'black',
-          pointBorderColor: '#3ea175',
-          fill: false,
-      }]
-  }
+//     const DataSemana2 ={
+//       labels  : ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'],
+//       datasets: [{
+//           labels: 'Água gasta na semana',
+//           data: [3, 14, 19, 8, 6],
+//           backgroundColor: '#3ea175',
+//           borderColor: 'black',
+//           pointBorderColor: '#3ea175',
+//           fill: false,
+//         },
+//       ]
+//     }
 
-  const DataSemana3 ={
-    labels  : ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'],
-    datasets: [{
-        labels: 'Água gasta na semana',
-        data: [6, 15, 17, 10, 20],
-        backgroundColor: '#3ea175',
-        borderColor: 'black',
-        pointBorderColor: '#3ea175',
-        fill: false,
-    }]
-}
+//   const DataSemana3 ={
+//     labels  : ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'],
+//     datasets: [{
+//         labels: 'Água gasta na semana',
+//         data: [6, 15, 17, 10, 20],
+//         backgroundColor: '#3ea175',
+//         borderColor: 'black',
+//         pointBorderColor: '#3ea175',
+//         fill: false,
+//     }]
+// }
 
     const DataDoughnut = {
       labels: [
@@ -88,37 +106,37 @@ const LineChart = () => {
         },
       };
 
-      const OptSensor2 = {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'top',
-          },
-          title: {
-            display: true,
-            text: 'Sensor 2',
-          },
-        },
-      };
+      // const OptSensor2 = {
+      //   responsive: true,
+      //   plugins: {
+      //     legend: {
+      //       position: 'top',
+      //     },
+      //     title: {
+      //       display: true,
+      //       text: 'Sensor 2',
+      //     },
+      //   },
+      // };
 
-      const OptSensor3 = {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'top',
-          },
-          title: {
-            display: true,
-            text: 'Sensor 3',
-          },
-        },
-      };
+      // const OptSensor3 = {
+      //   responsive: true,
+      //   plugins: {
+      //     legend: {
+      //       position: 'top',
+      //     },
+      //     title: {
+      //       display: true,
+      //       text: 'Sensor 3',
+      //     },
+      //   },
+      // };
 
       const OptDoughnut = {
         responsive: true,
         plugins: {
           legend: {
-            position: 'top',
+            display: false,
           },
           title: {
             display: true,
@@ -153,11 +171,10 @@ const LineChart = () => {
           className="line"
           >
           </Line>
-          <hr/>
           <Select className="Select" options={SelectOpt}></Select>
 
       </div>
-      <div className="lineChart">
+      {/* <div className="lineChart">
           <Line  
           data={DataSemana2}
           options={OptSensor2}
@@ -177,7 +194,7 @@ const LineChart = () => {
           </Line>
 
           <Select className="Select" options={SelectOpt}></Select>
-      </div>
+      </div> */}
     </>
     )
 }

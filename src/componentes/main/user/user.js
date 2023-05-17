@@ -20,10 +20,12 @@ function User() {
   return (
     <div>
       <Sidebar/>
+      <div className="userImg">
+      <img className="userAvatar" src={avatar} />
+      </div>
         <div className="user">
             <h1 className="userTitle">Bem-vindo, Usuário!</h1>
             <div className="userContent">
-                <img className="userAvatar" src="avatar.png" />
                 <p className="userInfo">Nome: Placeholder</p>
                 <p className="userInfo">Email: Placeholder</p>
                 <p className="userInfo">Idade: 40</p>

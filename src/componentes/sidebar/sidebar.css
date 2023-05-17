@@ -116,9 +116,10 @@
 }
 
 .sidebar__Logout {
-    margin-top: 600px;
+    margin-top: 650px;
     padding: 10px;
     color: #e65061;
+    margin-left: 10px;
 }
 
 .sidebar__Logout>i {
@@ -145,4 +146,12 @@
 
 .menuIcon {
     margin-bottom: 5px;
+}
+
+@media only screen and (max-device-width: 1400px) {
+    .sidebar__Logout {
+        margin-top: 300px;
+        padding: 10px;
+        color: #e65061;
+    }
 }
