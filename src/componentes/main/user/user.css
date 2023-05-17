@@ -35,6 +35,8 @@
 }
 
 .userInfo {
+    flex: 1;
+    flex-direction: 'row';
     margin-bottom: 10px;
     margin-right: 10px;
 }
