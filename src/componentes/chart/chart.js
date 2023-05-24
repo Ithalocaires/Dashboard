@@ -1,7 +1,6 @@
 import React from "react";
 import {Line, Doughnut} from "react-chartjs-2"
 import Select from 'react-select'
-import { userData } from "./dados";
 import { 
     Chart as ChartJS,
     LineElement,
@@ -22,10 +21,10 @@ import {
 const LineChart = () => {
 
     const DataSemana1 ={
-        labels  : ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'],
+        labels  : ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ],
         datasets: [{
             label: 'Sensor 1',
-            data: [8, 12, 5, 9, 15],
+            data: [83, 212, 139, 258, 143, 718, 894, 189, 568, 132, 594, 154],
             backgroundColor: '#36A2EB',
             borderColor: '#36A2EB',
             pointBorderColor: '#36A2EB',
@@ -33,7 +32,7 @@ const LineChart = () => {
             },
             {
               label: 'Sensor 2',
-              data: [3, 14, 19, 8, 6],
+              data: [325, 260, 340, 123, 98, 312, 142, 147, 695, 452, 124, 257],
               backgroundColor: '#FF6283',
               borderColor: '#FF6283',
               pointBorderColor: '#FF6283',
@@ -41,7 +40,7 @@ const LineChart = () => {
             },
             {
               label: 'Sensor 3',
-              data: [6, 15, 17, 10, 20],
+              data: [422, 124, 139, 258, 143, 151, 165, 156, 489, 359, 523, 474],
               backgroundColor: '#4ABFBF',
               borderColor: '#4ABFBF',
               pointBorderColor: '#4ABFBF',
@@ -49,31 +48,6 @@ const LineChart = () => {
             }
           ]
         }
-
-//     const DataSemana2 ={
-//       labels  : ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'],
-//       datasets: [{
-//           labels: 'Água gasta na semana',
-//           data: [3, 14, 19, 8, 6],
-//           backgroundColor: '#3ea175',
-//           borderColor: 'black',
-//           pointBorderColor: '#3ea175',
-//           fill: false,
-//         },
-//       ]
-//     }
-
-//   const DataSemana3 ={
-//     labels  : ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'],
-//     datasets: [{
-//         labels: 'Água gasta na semana',
-//         data: [6, 15, 17, 10, 20],
-//         backgroundColor: '#3ea175',
-//         borderColor: 'black',
-//         pointBorderColor: '#3ea175',
-//         fill: false,
-//     }]
-// }
 
     const DataDoughnut = {
       labels: [
@@ -83,7 +57,7 @@ const LineChart = () => {
       ],
       datasets: [{
         label: 'Litros Gastos',
-        data: [49, 50, 68],
+        data: [4084, 3275, 3403],
         backgroundColor: [
           'rgb(255, 99, 132)',
           'rgb(54, 162, 235)',
@@ -105,32 +79,6 @@ const LineChart = () => {
           },
         },
       };
-
-      // const OptSensor2 = {
-      //   responsive: true,
-      //   plugins: {
-      //     legend: {
-      //       position: 'top',
-      //     },
-      //     title: {
-      //       display: true,
-      //       text: 'Sensor 2',
-      //     },
-      //   },
-      // };
-
-      // const OptSensor3 = {
-      //   responsive: true,
-      //   plugins: {
-      //     legend: {
-      //       position: 'top',
-      //     },
-      //     title: {
-      //       display: true,
-      //       text: 'Sensor 3',
-      //     },
-      //   },
-      // };
 
       const OptDoughnut = {
         responsive: true,
@@ -161,7 +109,7 @@ const LineChart = () => {
         
         ></Doughnut>
         <hr/>
-        <Select className="Select" options={SelectOpt}></Select>
+        <Select className="Select1" options={SelectOpt}></Select>
 
       </div>
       <div className="lineChart">
@@ -171,30 +119,9 @@ const LineChart = () => {
           className="line"
           >
           </Line>
-          <Select className="Select" options={SelectOpt}></Select>
+          <Select className="Select2" options={SelectOpt}></Select>
 
       </div>
-      {/* <div className="lineChart">
-          <Line  
-          data={DataSemana2}
-          options={OptSensor2}
-          className="line"
-          >
-          </Line>
-          <hr/>
-          <Select className="Select" options={SelectOpt}></Select>
-
-      </div>
-      <div className="lineChart">
-          <Line  
-          data={DataSemana3}
-          options={OptSensor3}
-          className="line"
-          > 
-          </Line>
-
-          <Select className="Select" options={SelectOpt}></Select>
-      </div> */}
     </>
     )
 }

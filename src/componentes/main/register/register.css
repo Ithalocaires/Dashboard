@@ -1,11 +1,12 @@
 .register {
-    width: 700px;
+    width: 1100px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid gray;
     border-radius: 10px;
     background-color: white;
-    margin-left: 680px;
+    margin-left: 500px;
+    margin-top: 100px;
 }
 
 .registerTitle {
@@ -23,6 +24,38 @@
     margin-right: 10px;
 }
 
+.ul {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.addIcon {
+    margin-left: 863px;
+    position: absolute;
+    margin-bottom: 10px;
+    top: 14.5%
+}
+
+.list {
+    margin-top: 10px;
+    border-bottom: 1px solid lightgray;
+    padding: 20px;
+    width: 1000px;
+}
+
+.deleteIcon {
+    margin-left: 920px;
+    position: absolute;
+    margin-bottom: 10px;
+    color: #e65061;
+}
+
+.deleteIcon a:hover {
+    background-color: #411318;
+    border-radius: 3px;
+}
+
 @media only screen and (max-device-width: 1400px) {
     .register {
         width: 700px;
@@ -31,6 +64,7 @@
         border: 1px solid gray;
         border-radius: 10px;
         background-color: white;
-        margin-left: 400px;
+        margin-left: 500px;
+        margin-top: 100px;
     }
 }

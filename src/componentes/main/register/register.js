@@ -1,32 +1,26 @@
-import { 
-    Chart as ChartJS,
-    LineElement,
-    CategoryScale,
-    LinearScale,
-    PointElement
-  } from "chart.js";
   import Sidebar from "../../sidebar/sidebar";
   import "../register/register.css"
+  import { TfiPlus, TfiTrash } from "react-icons/tfi";
   
-  ChartJS.register(
-    LineElement,
-    CategoryScale,
-    LinearScale,
-    PointElement
-  )
-  
+
+  const sensors = ['Sensor 1', 'Sensor 2', 'Sensor 3', 'Sensor 4', 'Sensor 5', 'Sensor 6'];
+  const listItems = sensors.map((sensors) =>
+  <li className="list">{sensors} <TfiTrash size={20} className="deleteIcon"></TfiTrash></li>
+);
+    
   function Register() {
-  //   const [sidebarOpen, setSidebarOpen] = useState(false);
-  
     return (
       <div>
         <Sidebar/>
-          <div className="register">
-              <h1 className="registerTitle">Bem-vindo, Usuário!</h1>
+
+          <div className="register">             
+   
+              <h1 className="registerTitle">
+                Registrar Sensores
+                <TfiPlus size={25} className="addIcon" ></TfiPlus>
+              </h1>
               <div className="registerContent">
-                  <p className="registerInfo">Nome: Placeholder</p>
-                  <p className="registerInfo">Email: Placeholder</p>
-                  <p className="registerInfo">Idade: 40</p>
+                <ul className="ul">{listItems}</ul>
               </div>
           </div>
       </div>
