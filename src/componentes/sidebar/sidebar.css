@@ -1,6 +1,6 @@
 #sidebar {
     position: fixed;
-    background: #020509;
+    background: #16181F;
     grid-area: sd;
     padding: 20px;
     -webkit-transition: all 0.5s;
@@ -83,7 +83,7 @@
 }
 
 .active_menu_link {
-    background: rgba(62, 161, 117, 0.3);
+    background: #2D2931;
     color: #3ea175;
 }
 
@@ -93,21 +93,22 @@
 
 .sidebar__link>a {
     text-decoration: none;
-    color: #a5aaad;
+    color: #F2F3F5;
     font-weight: 700;
     padding: 0px;
 }
 
 .sidebar__link a:focus {
     padding: 7px;
-    background: rgba(62, 161, 117, 0.3);
+    background: #2D2931;
     border-radius: 3px;
 }
 
 .sidebar__link a:hover {
     padding: 7px;
-    background: rgba(62, 161, 117, 0.3);
+    background: #2D2931;
     border-radius: 3px;
+    transition-delay: 0.1s;
 }
 
 .sidebar__link>i {
@@ -143,6 +144,7 @@
     padding: 7px;
     background: #411318;
     border-radius: 3px;
+    transition-delay: 0.1s;
 }
 
 .menuIcon {

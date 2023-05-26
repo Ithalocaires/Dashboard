@@ -1,5 +1,5 @@
 .signUp {
-    background: #020509;
+    background: #16181F;
     grid-area: sd;
     padding: 20px;
     -webkit-transition: all 0.5s;
@@ -13,7 +13,7 @@
 .label {
     font-family: 'Lato';
     font-size: 16px;
-    color: #FFF;
+    color: #f3f4f6;
 }
 
 input[type="email"] {
@@ -21,7 +21,7 @@ input[type="email"] {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: #f3f4f6;
     font-size: 16px;
     box-sizing: border-box;
     margin-bottom: 20px;
@@ -33,7 +33,7 @@ input[type="text"] {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: #f3f4f6;
     font-size: 16px;
     box-sizing: border-box;
     margin-bottom: 20px;
@@ -45,7 +45,7 @@ input[type="password"] {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: #f3f4f6;
     font-size: 16px;
     box-sizing: border-box;
     margin-bottom: 20px;
@@ -54,7 +54,7 @@ input[type="password"] {
 
 .button {
     font-family: 'Lato';
-    background-color: #343941;
+    background-color: #485168;
     color: white;
     font-size: 20px;
     padding: 10px 20px;

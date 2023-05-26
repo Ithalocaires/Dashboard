@@ -1,14 +1,12 @@
 import '../sidebar/sidebar.css';
 import { useState } from 'react';
-import logo from '../../assets/logo.png'
 import {useNavigate } from "react-router-dom";
 
-import { CiLogout, CiUser, CiMonitor, CiHome, CiMenuBurger  } from "react-icons/ci";
 import { TfiBarChart, TfiUser, TfiWindow, TfiPowerOff, TfiAlignJustify } from "react-icons/tfi";
 
 
 
-const Sidebar = ({ closeSidebar }) => {
+const Sidebar = () => {
 
     const navigate = useNavigate();
 
