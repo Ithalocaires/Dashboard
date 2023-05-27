@@ -10,7 +10,8 @@ import {
  } from "chart.js";
 import { DateRangePicker } from 'rsuite';
 import {useState} from 'react'
- import './chart.css'
+import 'rsuite/dist/rsuite.min.css';
+import './chart.css'
 
  ChartJS.register(
     LineElement,
@@ -213,11 +214,20 @@ const LineChart = () => {
         ></Doughnut>
         <hr/>
         <Select className="Select1" options={SelectOpt} onChange={(value)=> AltChart(value)}></Select>
+
+        <DateRangePicker 
+        className="datePicker" 
+        hoverRange="week" 
+        isoWeek ranges={[]} 
+        showWeekNumbers size="md"
+        placeholder='Selecione a data'
+        showOneCalendar
+         />
 		{
-			selectedOpt?
-        <DateRangePicker localeText={{ start: 'Check-in', end: 'Check-out' }} />
-			:
-        <DateRangePicker className="datePicker" hoverRange="month" ranges={[]} />
+			// selectedOpt?
+      //   <DateRangePicker hoverRange="week" isoWeek ranges={[]} format="(dd/mm/yyyy)" />
+			// :
+      //   <DateRangePicker className="datePicker" hoverRange="month" ranges={[]} format="(dd/mm/yyyy)"  />
 		}
 
 

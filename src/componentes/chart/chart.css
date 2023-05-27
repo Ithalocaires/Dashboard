@@ -38,6 +38,7 @@ hr {
     position: relative;
     top: -95%;
     right: -45%;
+    border-radius: 20%;
 }
 
 .SelectMes {
@@ -59,10 +60,10 @@ hr {
 }
 
 .datePicker {
-    width: 200px;
-    margin-left: 500px;
+    width: 203px;
+    margin-left: 498px;
     position: relative;
-    top: -83%;
+    top: -80%;
     right: -45%;
     transform: translateY(-50%);
     border: 1px solid #0000;
