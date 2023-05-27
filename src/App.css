@@ -41,7 +41,7 @@ font-bold {
 }
 
 .container {
-  background-color: white;
+  background-color: #282F3C;
   display: grid;
   height: 100vh;
 }

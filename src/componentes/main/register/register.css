@@ -4,7 +4,7 @@
     padding: 20px;
     border: 1px solid gray;
     border-radius: 10px;
-    background-color: white;
+    background-color: #16181F;
     margin-left: 500px;
     margin-top: 100px;
 }
@@ -12,6 +12,7 @@
 .registerTitle {
     font-size: 24px;
     margin-bottom: 10px;
+    color: #F3F4F6;
 }
 
 .registerContent {
@@ -28,6 +29,7 @@
     font-size: 20px;
     margin-bottom: 10px;
     font-family: 'Roboto', sans-serif;
+    color: #F3F4F6;
 }
 
 .addIcon {
@@ -39,7 +41,7 @@
 
 .list {
     margin-top: 10px;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #AFAFAF;
     padding: 20px;
     width: 1000px;
 }
@@ -48,7 +50,7 @@
     margin-left: 920px;
     position: absolute;
     margin-bottom: 10px;
-    color: #e65061;
+    color: #D9322C;
 }
 
 .deleteIcon a:hover {

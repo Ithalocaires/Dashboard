@@ -2,7 +2,6 @@ import React from "react";
 import "../signUp/createAcc.css";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as yup from "yup";
 
 function CreateAcc() {
 

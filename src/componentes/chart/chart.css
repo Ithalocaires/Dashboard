@@ -37,8 +37,16 @@ hr {
     margin-left: 500px;
     position: relative;
     top: -95%;
-    right: -40%;
-    transform: translateY(-50%);
+    right: -45%;
+}
+
+.SelectMes {
+    width: 200px;
+    margin-left: 500px;
+    position: relative;
+    top: -95%;
+    right: -45%;
+    margin-top: 10px;
 }
 
 .Select2 {
@@ -46,8 +54,19 @@ hr {
     margin-left: 523px;
     position: relative;
     top: -95%;
-    right: -40%;
+    right: -45%;
     transform: translateY(-50%);
+}
+
+.datePicker {
+    width: 200px;
+    margin-left: 500px;
+    position: relative;
+    top: -83%;
+    right: -45%;
+    transform: translateY(-50%);
+    border: 1px solid #0000;
+    color: #575757;
 }
 
 
