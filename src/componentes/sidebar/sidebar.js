@@ -52,7 +52,7 @@ const Sidebar = () => {
                         style={{
                         marginRight: 7,
                         marginBottom: -3,
-                        }}/>Registradores</a>
+                        }}/>Sensores</a>
                 </div>
                 <div className='sidebar__Logout'>
                     <i className='Logout'></i>
