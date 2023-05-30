@@ -135,11 +135,11 @@
     font-family: 'Roboto', sans-serif;
     float: left;
     cursor: pointer;
-    color: #16181F;
+    color: 'white';
     width: 100%;
     border-radius: 5px;
     background-color: #238636;
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 

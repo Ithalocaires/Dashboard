@@ -193,26 +193,21 @@ const LineChart = () => {
         },
       };
 
-      const [selectedOpt, setSelectedOpt] = useState();
-
-      const handleChange = (event) => {
-        setSelectedOpt(event.value);
-      };
-    
-      
-      const SelectOpt = [
-        {value: 'Semanal', label:'Semanal'},
-        {value: 'Mensal', label:'Mensal'},
+      const [selectedOpt, setSelectedOpt] = useState('semanal');
+     
+      const selectOpt = [
+        {value: 'semanal', label:'Semanal'},
+        {value: 'mensal', label:'Mensal'},
       ]
 
-      const AltChart = (mensal) =>{
-      setSelectedOpt(mensal.value)
+      const handleChange = (event) =>{
+      setSelectedOpt(event.value)
       }
 
     return (
     <>
       <div className="doughnutChart">
-      {selectedOpt?
+      {selectedOpt === 'semanal' ?
         <Doughnut
         data={dataDoughnutSemana}
         options={optDoughnut}
@@ -226,17 +221,18 @@ const LineChart = () => {
         ></Doughnut>
       }
         <hr/>
-        <Select className="Select1" value={selectedOpt} options={SelectOpt} onChange={AltChart}>
+        <Select className="Select1" value={selectedOpt} options={selectOpt} onChange={handleChange}>
         </Select>
 
-			 {selectedOpt?
+			 {selectedOpt === 'semanal' ?
         <DateRangePicker 
         className="datePicker" 
         hoverRange="week" 
-        isoWeek ranges={[]} 
+        isoWeek ranges={[1]} 
         showWeekNumbers size="md"
         placeholder='Selecione a data'
         showOneCalendar
+        format="(dd--MM-yyyy)"
         />
 
 			 :
@@ -246,12 +242,13 @@ const LineChart = () => {
         ranges={[]}
         placeholder='Selecione a data' 
         showOneCalendar
+        format="(dd--MM-yyyy)"
         />
        }
 
       </div>
       <div className="lineChart">
-        {selectedOpt?
+        {selectedOpt === 'semanal' ?
           <Line  
           data={dataSemanas}
           options={optSensor1}
