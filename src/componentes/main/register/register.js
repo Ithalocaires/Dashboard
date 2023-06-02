@@ -27,7 +27,6 @@
 
     const handleChange = nextChecked => {
       setChecked(nextChecked);
-      auxSensors = [...sensors]
     };
 
     function openModal(){
