@@ -19,25 +19,49 @@
       {id: 6, name: 'Sensor 6', status: false},
     ]);
 
+    // A constante auxSensor é um clone do array sensors para ser
+    // manipulado na função 'handleChange'
     const auxSensors = [...sensors]
-   
+  
     const [sensorName, setSensorName] = useState();
-    const [sensorStatus, setSensorStatus] = useState(true);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [checked, setChecked] = useState(false);
     
- 
+    // Função para abrir o Modal
     function openModal(){
       setModalIsOpen(true);
     }
 
+    // Função para fechar o Modal
     function closeModal(){
       setModalIsOpen(false);
     }
 
-   
+    // Esta função deleta o sensor do array a partir do id do mesmo
+    const handleDeleteSensor = (id) => {
+      const updatedSensors = sensors.filter((sensor) => sensor.id !== id); 
+      setSensors(updatedSensors);
+    };
+
+    const handleAddSensor = () => {
+      const newSensor = {
+        id: sensors.length + 1, // Gera um novo id para o sensor
+        name: sensorName,
+        status: false // Define o status inicial como false (OFF)
+      };
     
+      setSensors([...sensors, newSensor]);
+      closeModal();
+    };
+
+
+    // A função listItems engloba todas as outras que 
+    // são responsáveis por renderizar em formato de lista os elementos
+    // no Array 'sensors'
     const listItems = sensors.map(({ id, name, status }) => {
+
+      // A função handleChange é a que faz a mudança de
+      // estado de cada sensor e também do switch que cada um tem
       const handleChange = (nextChecked) => {
         setChecked(nextChecked);
         const updatedSensors = auxSensors.map((item) => {
@@ -49,6 +73,9 @@
         setSensors(updatedSensors);
       };
     
+      // Este return traz os sensores presentes do array 'sensors' em formato de lista
+      // fazendo uma verificação no status do sensor para renderizar um ON ou um OFF
+      // o componente <switch> é da biblioteca React-Switch
       return (
         <li key={id} className="list">
           {name}
@@ -60,7 +87,7 @@
               <p className="statusOFF"> OFF </p>
             )}
           </h6>
-          <a className="deleteSensor">
+          <a className="deleteSensor" onClick={() => handleDeleteSensor(id)}>
             <TfiTrash size={20} className="deleteIcon"></TfiTrash>
           </a>
           <Switch
@@ -81,6 +108,8 @@
         </li>
       );
     });
+
+
     return (
       <div>
         <Sidebar/>
@@ -99,8 +128,16 @@
                 >
                <label className="label">
                   Nome do sensor:
-                  <input id="nome" value={sensorName} className="sensorNome" type="text" name="name" placeholder="Nome do sensor" />
-                  <button className="confirm" onClick={(e) => setSensorName(e.target.value)}> Confirmar </button>
+                  <input
+                    id="nome"
+                    value={sensorName}
+                    onChange={(e) => setSensorName(e.target.value)}
+                    className="sensorNome"
+                    type="text"
+                    name="name"
+                    placeholder="Nome do sensor"
+                  />
+                  <button className="confirm" onClick={handleAddSensor}> Confirmar </button>
                </label>
                 </Modal>
               </h1>
