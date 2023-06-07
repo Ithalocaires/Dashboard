@@ -20,6 +20,9 @@ import './chart.css'
     PointElement
  )
 
+ const { allowedMaxDays, allowedDays, allowedRange, beforeToday, afterToday, combine } =
+  DateRangePicker;
+
  
 
 const LineChart = () => {
@@ -233,6 +236,7 @@ const LineChart = () => {
         placeholder='Selecione a data'
         showOneCalendar
         format="(dd--MM-yyyy)"
+        disabledDate={combine(allowedMaxDays(7), beforeToday())}
         />
 
 			 :

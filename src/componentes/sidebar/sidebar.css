@@ -100,7 +100,7 @@
 
 .sidebar__link a:focus {
     padding: 7px;
-    background: #2D2931;
+    background: rgb(45, 41, 49);
     border-radius: 3px;
 }
 

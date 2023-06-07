@@ -18,17 +18,15 @@
       {id: 5, name: 'Sensor 5', status: false},
       {id: 6, name: 'Sensor 6', status: false},
     ]);
+
+    const auxSensors = [...sensors]
    
     const [sensorName, setSensorName] = useState();
     const [sensorStatus, setSensorStatus] = useState(true);
     const [modalIsOpen, setModalIsOpen] = useState(false);
-
     const [checked, setChecked] = useState(false);
-
-    const handleChange = nextChecked => {
-      setChecked(nextChecked);
-    };
-
+    
+ 
     function openModal(){
       setModalIsOpen(true);
     }
@@ -36,41 +34,53 @@
     function closeModal(){
       setModalIsOpen(false);
     }
-  
-    function handleStatus() {
-      setSensorStatus(false)
-    }
-    
-    const listItems = sensors.map(({id, name, status}) =>
-    <li key={id} className="list"> {name} 
-      <h7 className="statusText">status: 
-        {status?
-        <h7 className="statusON"> ON </h7>
-        :
-        <h7 className="statusOFF"> OFF </h7>
-        }
-      </h7>
-      <a className="deleteSensor">   
-        <TfiTrash size={20} className="deleteIcon"></TfiTrash>  
-      </a>
-      <Switch
-        onChange={handleChange}
-        checked={status}
-        onColor="#86d3ff"
-        onHandleColor="#2693e6"
-        handleDiameter={20}
-        uncheckedIcon={false}
-        checkedIcon={false}
-        boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
-        activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
-        height={15}
-        width={40}
-        className="react-switch"
-        id="material-switch"
-      /> 
-    </li> 
-  );
 
+   
+    
+    const listItems = sensors.map(({ id, name, status }) => {
+      const handleChange = (nextChecked) => {
+        setChecked(nextChecked);
+        const updatedSensors = auxSensors.map((item) => {
+          if (item.id === id) {
+            return { ...item, status: !item.status };
+          }
+          return item;
+        });
+        setSensors(updatedSensors);
+      };
+    
+      return (
+        <li key={id} className="list">
+          {name}
+          <h6 className="statusText">
+            status:
+            {status ? (
+              <p className="statusON"> ON </p>
+            ) : (
+              <p className="statusOFF"> OFF </p>
+            )}
+          </h6>
+          <a className="deleteSensor">
+            <TfiTrash size={20} className="deleteIcon"></TfiTrash>
+          </a>
+          <Switch
+            onChange={(nextChecked) => handleChange(nextChecked)}
+            checked={status}
+            onColor="#86d3ff"
+            onHandleColor="#2693e6"
+            handleDiameter={20}
+            uncheckedIcon={false}
+            checkedIcon={false}
+            boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+            activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+            height={15}
+            width={40}
+            className="react-switch"
+            id="material-switch"
+          />
+        </li>
+      );
+    });
     return (
       <div>
         <Sidebar/>
@@ -91,7 +101,6 @@
                   Nome do sensor:
                   <input id="nome" value={sensorName} className="sensorNome" type="text" name="name" placeholder="Nome do sensor" />
                   <button className="confirm" onClick={(e) => setSensorName(e.target.value)}> Confirmar </button>
-                  {console.log(sensorName)}
                </label>
                 </Modal>
               </h1>
