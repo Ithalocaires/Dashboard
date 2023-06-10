@@ -27,6 +27,7 @@ import './chart.css'
 
 const LineChart = () => {
 
+  // Dados fictícios
   var dataMensal1 = [9047, 5411, 6821, 3999, 5851, 5992, 2809, 8148, 6182, 8950, 7758, 9080];
   var dataMensal2 = [7715, 6568, 6450, 8719, 5475, 4656, 8880, 2835, 8640, 4854, 6885, 3617];
   var dataMensal3 = [5246, 5378, 4181, 9465, 9527, 6906, 5878, 5154, 4562, 6111, 8323, 4511];
@@ -35,6 +36,8 @@ const LineChart = () => {
   var dataSemana3 = [119, 170, 92, 181, 84, 185, 172]
   var totalMes = [80048, 75294, 75242];
   var totalSemana = [947, 1018, 1003];
+
+
 
     const dataMeses ={
         labels  : ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ],

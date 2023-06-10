@@ -163,6 +163,20 @@
 
 }
 
+.modalLabel {
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.modalText {
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    color: #F3F4F6;
+
+}
+
+
+
 
 @media only screen and (max-device-width: 1400px) {
     .register {

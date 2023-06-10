@@ -4,7 +4,7 @@
   import React, { useState } from 'react';
   import Modal from "react-modal"
   import Switch from "react-switch";
-  
+
   Modal.setAppElement('#root');
     
   function Register() {
@@ -12,17 +12,13 @@
 
     const[sensors, setSensors] = useState([
       {id: 1, name: 'Sensor 1', status: true},
-      {id: 2, name: 'Sensor 2', status: true},
-      {id: 3, name: 'Sensor 3', status: true},
-      {id: 4, name: 'Sensor 4', status: false},
-      {id: 5, name: 'Sensor 5', status: false},
-      {id: 6, name: 'Sensor 6', status: false},
+      {id: 2, name: 'Sensor 2', status: false},
+      {id: 3, name: 'Sensor 3', status: false},
     ]);
 
     // A constante auxSensor é um clone do array sensors para ser
     // manipulado na função 'handleChange'
     const auxSensors = [...sensors]
-  
     const [sensorName, setSensorName] = useState();
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [checked, setChecked] = useState(false);
@@ -53,6 +49,7 @@
       setSensors([...sensors, newSensor]);
       closeModal();
     };
+
 
 
     // A função listItems engloba todas as outras que 
@@ -126,7 +123,8 @@
                   overlayClassName='modal-overlay'
                   className='modal-content'
                 >
-               <label className="label">
+               <h2 className='modalText'>Cadastrar Sensor</h2>
+               <label className="modalLabel">
                   Nome do sensor:
                   <input
                     id="nome"

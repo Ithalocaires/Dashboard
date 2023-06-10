@@ -15,9 +15,9 @@ function CreateAcc() {
 
   const validation = yup.object({
     nome: yup
-    .string()
-    .min(2, "Nome Inválido")
-    .required("O nome é obrigatório"),
+      .string()
+      .min(2, "Nome Inválido")
+      .required("O nome é obrigatório"),
     email: yup
       .string()
       .email("Email inválido")
