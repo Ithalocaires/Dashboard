@@ -1,43 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
-
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  function CriarConta() {
-    navigate("/SignUp");
+  const handleLogin = (event) => {
+    event.preventDefault();
+
+    // Obtém as informações do localStorage
+    const storedEmail = localStorage.getItem("email");
+    const storedPassword = localStorage.getItem("password");
+
+    // Verifica se as informações inseridas correspondem às armazenadas
+    if (email === storedEmail && password === storedPassword) {
+      // Autenticação bem-sucedida, redireciona para a página inicial
+      navigate("/home");
+    } else {
+      // Autenticação falhou, exibe mensagem de erro
+      toast.error("Credenciais inválidas. Por favor, tente novamente.");
+    }
+  };
+
+  function handleSignUp() {
+    navigate("/signUp");
   }
 
-  function Logar() {
-    navigate("/Home");
-  }
-
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-
-  // function validateForm() {
-  //   return email.length > 0 && password.length > 0;
-  // }
-  // function handleSubmit(event) {
-  //   event.preventDefault();
-  // }
-  
   return (
     <div className="Login">
-      <form>
+      <form onSubmit={handleLogin}>
         <label className="label">
-            E-mail:
-            <input type="email" name="name" placeholder="E-mail" />
+          E-mail:
+          <input
+            type="email"
+            name="name"
+            placeholder="E-mail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </label>
         <label className="label">
           Senha:
-            <input type="password" name="senha" placeholder="Senha"/>
+          <input
+            type="password"
+            name="senha"
+            placeholder="Senha"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </label>
-          <input type="submit" value="Submit" className="button" onClick={Logar}/>
-          <a onClick={CriarConta}> Criar Conta </a>
-        </form>
+        <input type="submit" value="Submit" className="button" />
+        <a onClick={handleSignUp}>Criar Conta</a>
+      </form>
+      <ToastContainer autoClose={3000} />
     </div>
   );
 }

@@ -26,6 +26,10 @@ ChartJS.register(
 
 function User() {
 
+  const storedUserName = localStorage.getItem("userName")
+  const storedEmail = localStorage.getItem("email");
+  const storedPassword = localStorage.getItem("password");
+
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [password, setPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -74,10 +78,10 @@ function User() {
       <img className="userAvatar" src={avatar} />
       </div>
         <div className="user">
-            <h1 className="userTitle">Bem-vindo, Carlos!</h1>
+            <h1 className="userTitle">Bem-vindo, {storedUserName}!</h1>
             <div className="userContent">
-                <p className="userInfo">Nome:   Carlos Vieira da Silva</p>
-                <p className="userInfo2">Email:   CarlosV.Silva@gmail.com</p>
+                <p className="userInfo">Nome:   {storedUserName}</p>
+                <p className="userInfo2">Email:   {storedEmail}</p>
             </div>
         </div>
         <button onClick={openModal} className="changePasswordBtn">

@@ -42,14 +42,20 @@ function CreateAcc() {
       return;
     }
 
-    if (password.length < 8) {
-      toast.error("A senha deve ter mais que 8 caracteres");
+    if (password.length < 6) {
+      toast.error("A senha deve ter mais que 6 caracteres");
       return;
     }
   
     // Fecha o modal e retorna para a tela do usuário
     toast.success("Conta criada com sucesso");
     setIsOpen(true);
+    localStorage.setItem("userName", userName);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+    console.log(userName)
+    console.log(email)
+    console.log(password)
   };
 
 
