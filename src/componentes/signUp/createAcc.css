@@ -11,7 +11,7 @@
 }
 
 .label {
-    font-family: 'Lato';
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     color: #f3f4f6;
 }
@@ -55,13 +55,14 @@ input[type="password"] {
 .button {
     font-family: 'Lato';
     background-color: #485168;
-    color: white;
+    color: #f3f4f6;
     font-size: 20px;
     padding: 10px 20px;
     border-radius: 5%;
     margin: 10px 0px;
     cursor: pointer;
     width: 100%;
+    font-family: 'Roboto', sans-serif;
 }
 
 .error {
@@ -70,4 +71,49 @@ input[type="password"] {
     color: #dd1212;
     margin-top: 2px;
     margin-bottom: -10px;
+}
+
+dialog {
+    width: 400px;
+    background-color: #16181F;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 300px;
+    position: fixed;
+    top: 14%;
+    left: 21%;
+    transform: translate(-50%, -30%);
+    border-color: #16181F;
+    align-items: center;
+}
+
+dialog h2 {
+    font-size: 20px;
+    margin-top: 0;
+    color: #f3f4f6;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin-left: 60px;
+}
+
+dialog p {
+    margin-bottom: 16px;
+    color: #f3f4f6;
+    font-family: 'Roboto', sans-serif;
+}
+
+dialog button {
+    background-color: #238636;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+
+dialog button:hover {
+    background-color: #1e682d;
 }

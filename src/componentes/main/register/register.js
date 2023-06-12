@@ -22,6 +22,16 @@
     const [sensorName, setSensorName] = useState();
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [checked, setChecked] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+
+    const openDialog = () => {
+      setIsOpen(true);
+    };
+  
+    const closeDialog = () => {
+      setIsOpen(false);
+    };
+  
     
     // Função para abrir o Modal
     function openModal(){
@@ -37,6 +47,7 @@
     const handleDeleteSensor = (id) => {
       const updatedSensors = sensors.filter((sensor) => sensor.id !== id); 
       setSensors(updatedSensors);
+      setIsOpen(false);
     };
 
     const handleAddSensor = () => {
@@ -64,10 +75,12 @@
         const updatedSensors = auxSensors.map((item) => {
           if (item.id === id) {
             return { ...item, status: !item.status };
+
           }
           return item;
         });
         setSensors(updatedSensors);
+
       };
     
       // Este return traz os sensores presentes do array 'sensors' em formato de lista
@@ -78,15 +91,23 @@
           {name}
           <h6 className="statusText">
             status:
-            {status ? (
+            {status ? (                             // If ternário para verificar o status dos sensores cadastrados
               <p className="statusON"> ON </p>
             ) : (
               <p className="statusOFF"> OFF </p>
             )}
           </h6>
-          <a className="deleteSensor" onClick={() => handleDeleteSensor(id)}>
+          <a className="deleteSensor" onClick={openDialog}>
             <TfiTrash size={20} className="deleteIcon"></TfiTrash>
           </a>
+
+          {isOpen && (
+            <dialog open>
+              <h2>Realmente deseja deletar este sensor?</h2>
+              <button className="cancel" onClick={closeDialog}>Cancelar</button>
+              <button className="confirm" onClick={() => handleDeleteSensor(id)}>Deletar</button>
+            </dialog>
+          )}
           <Switch
             onChange={(nextChecked) => handleChange(nextChecked)}
             checked={status}
@@ -110,6 +131,7 @@
     return (
       <div>
         <Sidebar/>
+      
           <div id="root" className="register">             
               <h1 className="registerTitle">
                 Registrar Sensores
@@ -135,7 +157,7 @@
                     name="name"
                     placeholder="Nome do sensor"
                   />
-                  <button className="confirm" onClick={handleAddSensor}> Confirmar </button>
+                  <button className="confirmModal" onClick={handleAddSensor}> Confirmar </button>
                </label>
                 </Modal>
               </h1>

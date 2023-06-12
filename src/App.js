@@ -8,7 +8,6 @@ import User from './componentes/main/user/user'
 import Register from './componentes/main/register/register'
 
 const App = () => {
-
   return (
     <>
     <div className='container'>

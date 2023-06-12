@@ -77,8 +77,7 @@ function User() {
             <h1 className="userTitle">Bem-vindo, Carlos!</h1>
             <div className="userContent">
                 <p className="userInfo">Nome:   Carlos Vieira da Silva</p>
-                <p className="userInfo">Email:   CarlosV.Silva@gmail.com</p>
-                <p className="userInfo">Idade:   27</p>
+                <p className="userInfo2">Email:   CarlosV.Silva@gmail.com</p>
             </div>
         </div>
         <button onClick={openModal} className="changePasswordBtn">

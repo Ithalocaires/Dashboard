@@ -1,62 +1,106 @@
-import React from "react";
+import React, { useState } from 'react';
 import "../signUp/createAcc.css";
 import { useNavigate } from "react-router-dom";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function CreateAcc() {
 
-  const yup = require("yup");
-
   const navigate = useNavigate();
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [userName, setUserName] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
-  function Criar() {
+  const openDialog = () => {
+    setIsOpen(true);
+  };
+
+  const closeDialog = () => {
+    setIsOpen(false);
     navigate("/");
-  }
+  };
 
-  const validation = yup.object({
-    nome: yup
-      .string()
-      .min(2, "Nome Inválido")
-      .required("O nome é obrigatório"),
-    email: yup
-      .string()
-      .email("Email inválido")
-      .required("O email é obrigatório"),
-    password: yup
-      .string()
-      .min(8, "A senha deve ter pelo menos 8 caracteres")
-      .required("A senha é obrigatória")
-  });
+
+  const handleCreateAccount = () => {
+
+    // Verifica se os campos estão vazios
+    if (userName.trim() === "" || email.trim() === "" || password.trim() === "") {
+      toast.error("Por favor, preencha todos os campos!");
+      return;
+    }
+    
+    // Verifica a length do campo newPassword
+    if (userName.length < 3) {
+      toast.error("Insira um Nome válido");
+      return;
+    }
+    
+    //Verifica se os campos newPassword e confirmNewPassword são diferentes
+    if (email.length < 5) {
+      toast.error("Insira um email válido");
+      return;
+    }
+
+    if (password.length < 8) {
+      toast.error("A senha deve ter mais que 8 caracteres");
+      return;
+    }
+  
+    // Fecha o modal e retorna para a tela do usuário
+    toast.success("Conta criada com sucesso");
+    setIsOpen(true);
+  };
+
+
 
   return (
-
-    <Formik
-    initialValues={{ email: "", password: "" }}
-    validationSchema={validation}
-    >
     <div className="signUp">
-      <Form>
+        {isOpen && (
+            <dialog open>
+              <h2>Conta criada com sucesso</h2>
+              <button onClick={closeDialog}>Fechar</button>
+            </dialog>
+          )}
           <div>
             <label className="label">  *Nome:</label>
-            <ErrorMessage className="error" component="div" name="nome" />
-            <Field type="text" name="nome" placeholder="Nome" />
+            <input 
+            type="text" 
+            name="nome" 
+            placeholder="Nome" 
+            value={userName}
+            id='userName'
+            onChange={(e) => setUserName(e.target.value)}
+              />
           </div>
           <div>
             <label className="label">  *E-mail:</label>
-            <ErrorMessage className="error" component="div" name="email" />
-            <Field type="email" name="email" placeholder="Email" />
+            <input 
+            type="email" 
+            name="email" 
+            placeholder="Email" 
+            value={email} 
+            id='email'
+            onChange={(e) => setEmail(e.target.value)}
+             />
           </div>
 
           <div>
             <label className="label">  *Senha:</label>
-            <ErrorMessage className="error" component="div" name="password" />
-            <Field type="password" name="password" placeholder="Senha" />
+            <input
+            type="password" 
+            name="password" 
+            placeholder="Senha" 
+            value={password} 
+            id='password'
+            onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
 
-          <button type="submit" className="button" onClick={Criar}>Submit</button>
-        </Form>
+          <button type="submit" className="button" onClick={handleCreateAccount}>Submit</button>
+        
+          <ToastContainer autoClose={3000} />
     </div>
-    </Formik>
   );
 }
 

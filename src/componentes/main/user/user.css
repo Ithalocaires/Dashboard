@@ -6,6 +6,7 @@
     border-radius: 10px;
     background-color: #16181F;
     margin-left: 680px;
+    text-align: center;
 }
 
 .userImg {
@@ -27,6 +28,8 @@
 .userContent {
     display: flex;
     align-items: center;
+    flex-direction: row;
+    text-align: left;
 }
 
 .userAvatar {
@@ -38,12 +41,26 @@
 
 .userInfo {
     flex: 1;
-    flex-direction: 'row';
+    position: relative;
     margin-bottom: 10px;
     margin-right: 10px;
     color: #F3F4F6;
+    font-size: 16px;
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
 }
+
+.userInfo2 {
+    flex: 1;
+    position: relative;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    color: #F3F4F6;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 15px;
+}
+
 
 .changePasswordBtn {
     font-family: 'Roboto', sans-serif;
@@ -96,7 +113,32 @@
         padding: 20px;
         border: 1px solid gray;
         border-radius: 10px;
-        background-color: #F3F4F6;
+        background-color: #16181F;
         margin-left: 400px;
     }
+
+    .userInfo2 {
+        flex: 1;
+        position: relative;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        color: #F3F4F6;
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+        margin-bottom: 15px;
+        left: 14%;
+    }
+
+    .changePasswordBtn {
+        font-family: 'Roboto', sans-serif;
+        background-color: #282F3C;
+        color: #F3F4F6;
+        font-size: 20px;
+        margin: 10px 0px;
+        cursor: pointer;
+        width: 200px;
+        margin-left: 667px;
+        margin-top: 50px;
+    }
+
 }
